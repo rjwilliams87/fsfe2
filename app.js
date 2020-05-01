@@ -7,4 +7,11 @@ app.get("/", (req, res) => {
  }
 );
 
+app.get("/test", (req, res) => {
+    res.status(418);
+    res.set('x-test-status', 'test-fail');
+    res.send("this isn't working!");
+  }
+);
+
 app.listen(port, () => console.log(`Example app running on port ${port}`));
